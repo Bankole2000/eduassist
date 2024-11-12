@@ -1,0 +1,12 @@
+@startuml EduAssist
+  entity user {
+    + userID: String
+    --
+    username: String
+    email: String
+    firstname: String
+    lastname: String
+    gender: Enum
+    avatar: String
+  }
+@enduml

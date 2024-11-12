@@ -1,0 +1,31 @@
+{
+  "name": "eduassist",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "@neoncoder/validator-utils": "^0.0.14",
+    "@neoncoder/vuetify-sonner": "^0.3.21",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-shell": "^2",
+    "pinia": "^2.2.4",
+    "vue": "^3.3.4",
+    "vue-router": "^4.4.5",
+    "vue-timer-hook": "^1.0.84",
+    "vuetify": "^3.7.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1",
+    "vue-tsc": "^2.0.22"
+  }
+}

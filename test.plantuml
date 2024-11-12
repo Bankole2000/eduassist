@@ -1,0 +1,32 @@
+' @startuml
+' title First Page
+' Alice -->> Bob: Hello
+' newpage
+' Bob <- Alice: Goodbye
+
+' @enduml
+
+' @startuml
+' actor foo
+' foo --> (bar) : normal
+' foo --> (bar1) #line:red;line.bold;text:red  : red bold
+' foo --> (bar2) #green;line.dashed;text:green : green dashed 
+' foo --> (bar3) #blue;line.dotted;text:blue   : blue dotted
+' @enduml
+
+@startuml
+
+User->Radiant: Expresses Intent to Transfer Funds \n (e.g. visit transfer page)
+Capstone<--Radiant:**Authenticate** and Fetch Settings
+Capstone-->Radiant: Settings + FX Rates etc
+Radiant->User: Present user with data & options \n (e.g. currencies, FX rates, transfer history)
+User->Radiant: Enters amount and beneficiary details
+note over Radiant, Capstone: Verify Beneficiary Account Details
+Capstone-->Radiant: Txn UUID / Reference \n//Txn marked **Not Sent** + **Pending**
+User->Radiant: User Makes Deposit / Confirmation \n // Txn is marked as **Sent** + **Pending** // 
+Radiant-->Capstone: Send Deposit confirmation details \n + Txn UUID / Reference
+note over Capstone, Recipient: Payout to Recipient from \nRadiant Settlement Account
+Recipient-->Capstone: Payout confirmation
+Capstone-->Radiant: Txn status updated to **Sent + Confirmed**
+Radiant->User: Inform user of successful Transfer
+@enduml
